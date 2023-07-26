@@ -1,61 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML QuickStart with Tailwindcss and DaisyUI</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.3.1/dist/full.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 03 Fruit Burst with Tailwindcss and DaisyUI By Nazmul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.3.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Custom Classes  -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              "my-bg-color": "#F85559",
+              "color-01": "#121212",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+        .lato-font {
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+  </head>
+  <body class="lato-font">
     <!-- Header Section  -->
-    <header>
-        <!-- Navbar section  -->
-        <nav>
-            <div class="navbar bg-base-100">
-                <div class="flex-1">
-                  <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <header class="container mx-auto">
+      <!-- Navbar section  -->
+      <nav class="my-5 md:my-12">
+        <div class="navbar bg-[#F85559] rounded-full py-5 px-5 md:px-10">
+            <!-- Left Menu  -->
+            <div class="navbar-start">
+                <div class="dropdown">
+                  <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                  </label>
+                  <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-lg font-medium text-black lg:text-white">
+                    <li><a>About Us</a></li>
+                    <li><a>Home</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>All Fruits</a></li>
+                  </ul>
                 </div>
-                <div class="flex-none gap-2">
-                  <div class="form-control">
-                    <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
-                  </div>
-                  <div class="dropdown dropdown-end">
-                    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                      <div class="w-10 rounded-full">
-                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                      </div>
-                    </label>
-                    <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                      <li>
-                        <a class="justify-between">
-                          Profile
-                          <span class="badge">New</span>
-                        </a>
-                      </li>
-                      <li><a>Settings</a></li>
-                      <li><a>Logout</a></li>
-                    </ul>
-                  </div>
+    
+                <div class="hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1 text-lg font-medium text-white">
+                    <li><a>Home</a></li>
+                    <li><a>About Us</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>All Fruits</a></li>
+                  </ul>
                 </div>
+    
               </div>
-        </nav>
 
-        <!-- Banner Section  -->
-        <div>
+            <!-- Center logo  -->
+            <div class="navbar-center">
+                <img src="./images/logo.png" alt="">
+                <h1 class="text-2xl md:text-5xl text-white ml-2">
+                    Fruit Burst
+                </h1>
+            
+              </div>
 
+            <!-- Search bar  -->
+            <div class="navbar-end hidden lg:flex">
+                  <input type="text" placeholder="Search here" class="input input-bordered w-24 md:w-auto relative text-[color-01]" />
+                  <svg class="absolute hidden text-[color-01]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20.9998 21L15.8028 15.803M15.8028 15.803C17.2094 14.3965 17.9996 12.4887 17.9996 10.4995C17.9996 8.51035 17.2094 6.60262 15.8028 5.19605C14.3962 3.78947 12.4885 2.99927 10.4993 2.99927C8.51011 2.99927 6.60238 3.78947 5.19581 5.19605C3.78923 6.60262 2.99902 8.51035 2.99902 10.4995C2.99902 12.4887 3.78923 14.3965 5.19581 15.803C6.60238 17.2096 8.51011 17.9998 10.4993 17.9998C12.4885 17.9998 14.3962 17.2096 15.8028 15.803Z" stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+            </div>
         </div>
+      </nav>
+
+      <!-- Banner Section  -->
+      <div class="my-14">
+        <!-- banner slider section  -->
+        <div class="carousel w-full">
+            <!-- Slide 01  -->
+            <div id="slide1" class="carousel-item relative w-full">
+                <div class="hero h-[600px] bg-black bg-opacity-50 bg-blend-overlay" style="background-image: url('./images/banner1.png');">
+                    <div class="hero-content text-center">
+                      <div class="max-w-md space-y-6">
+                        <img src="./images/Rectangle 14.png" alt="" class="mx-auto">
+                        <h1 class="text-4xl lg:text-7xl font-extrabold text-white">Exotic tastes at your doorstep</h1>
+                        <p class="uppercase text-sm lg:text-xl text-white">We supply highly quality organic products</p>
+                        <button class="btn bg-primary-red text-white border-none">
+                          Shop Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide4" class="btn btn-circle">❮</a> 
+                <a href="#slide2" class="btn btn-circle">❯</a>
+              </div>
+            </div> 
+            <div id="slide2" class="carousel-item relative w-full">
+              <img src="./images/banner2.png" class="w-full" />
+              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide1" class="btn btn-circle">❮</a> 
+                <a href="#slide3" class="btn btn-circle">❯</a>
+              </div>
+            </div> 
+            <div id="slide3" class="carousel-item relative w-full">
+              <img src="./images/banner3.png" class="w-full" />
+              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide2" class="btn btn-circle">❮</a> 
+                <a href="#slide4" class="btn btn-circle">❯</a>
+              </div>
+            </div> 
+            <div id="slide4" class="carousel-item relative w-full">
+              <img src="./images/banner4.png" class="w-full" />
+              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide3" class="btn btn-circle">❮</a> 
+                <a href="#slide1" class="btn btn-circle">❯</a>
+              </div>
+            </div>
+          </div>
+      </div>
     </header>
 
     <!-- Main Section  -->
-    <main>
-
-    </main>
+    <main></main>
 
     <!-- Footer Section  -->
-    <footer>
-
-    </footer>
-
-</body>
+    <footer></footer>
+  </body>
 </html>
